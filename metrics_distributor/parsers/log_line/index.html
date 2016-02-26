@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="rustdoc">
-    <meta name="description" content="API documentation for the Rust `reader` mod in crate `metrics_distributor`.">
-    <meta name="keywords" content="rust, rustlang, rust-lang, reader">
+    <meta name="description" content="API documentation for the Rust `log_line` mod in crate `metrics_distributor`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, log_line">
 
-    <title>metrics_distributor::reader - Rust</title>
+    <title>metrics_distributor::parsers::log_line - Rust</title>
 
-    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
-    <link rel="stylesheet" type="text/css" href="../../main.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
 
     
     
@@ -27,7 +27,7 @@
 
     <nav class="sidebar">
         
-        <p class='location'><a href='../index.html'>metrics_distributor</a></p><script>window.sidebarCurrent = {name: 'reader', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+        <p class='location'><a href='../../index.html'>metrics_distributor</a>::<wbr><a href='../index.html'>parsers</a></p><script>window.sidebarCurrent = {name: 'log_line', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
     </nav>
 
     <nav class="sub">
@@ -42,16 +42,25 @@
     </nav>
 
     <section id='main' class="content mod">
-<h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>metrics_distributor</a>::<wbr><a class='mod' href=''>reader</a></span><span class='out-of-band'><span id='render-detail'>
+<h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>metrics_distributor</a>::<wbr><a href='../index.html'>parsers</a>::<wbr><a class='mod' href=''>log_line</a></span><span class='out-of-band'><span id='render-detail'>
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-740' class='srclink' href='../../src/metrics_distributor/reader.rs.html#1-88' title='goto source code'>[src]</a></span></h1>
+        </span><a id='src-740' class='srclink' href='../../../src/metrics_distributor/parsers/log_line.rs.html#1-224' title='goto source code'>[src]</a></span></h1>
 <h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
 <table>
                     <tr class=' module-item'>
+                        <td><a class='struct' href='struct.HerokuLogLineReader.html'
+                               title='metrics_distributor::parsers::log_line::HerokuLogLineReader'>HerokuLogLineReader</a></td>
+                        <td class='docblock short'>
+                             <p>Reads Heroku&#39;s logging metrics.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
                         <td><a class='struct' href='struct.StandardLogLineReader.html'
-                               title='metrics_distributor::reader::StandardLogLineReader'>StandardLogLineReader</a></td>
+                               title='metrics_distributor::parsers::log_line::StandardLogLineReader'>StandardLogLineReader</a></td>
                         <td class='docblock short'>
                              <p>Reads metrics from log lines in the standard formats:</p>
 
@@ -61,7 +70,7 @@
 <table>
                     <tr class=' module-item'>
                         <td><a class='trait' href='trait.LogLineReader.html'
-                               title='metrics_distributor::reader::LogLineReader'>LogLineReader</a></td>
+                               title='metrics_distributor::parsers::log_line::LogLineReader'>LogLineReader</a></td>
                         <td class='docblock short'>
                              <p>Reader that takes a log line string and returns any metrics found in it.</p>
 
@@ -119,13 +128,13 @@
     
 
     <script>
-        window.rootPath = "../../";
+        window.rootPath = "../../../";
         window.currentCrate = "metrics_distributor";
         window.playgroundUrl = "";
     </script>
-    <script src="../../jquery.js"></script>
-    <script src="../../main.js"></script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
     
-    <script defer src="../../search-index.js"></script>
+    <script defer src="../../../search-index.js"></script>
 </body>
 </html>

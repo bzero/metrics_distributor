@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="rustdoc">
-    <meta name="description" content="API documentation for the Rust `StandardLogLineReader` struct in crate `metrics_distributor`.">
-    <meta name="keywords" content="rust, rustlang, rust-lang, StandardLogLineReader">
+    <meta name="description" content="API documentation for the Rust `HerokuLogLineReader` struct in crate `metrics_distributor`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, HerokuLogLineReader">
 
-    <title>metrics_distributor::reader::StandardLogLineReader - Rust</title>
+    <title>metrics_distributor::parsers::log_line::HerokuLogLineReader - Rust</title>
 
-    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
-    <link rel="stylesheet" type="text/css" href="../../main.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
 
     
     
@@ -27,7 +27,7 @@
 
     <nav class="sidebar">
         
-        <p class='location'><a href='../index.html'>metrics_distributor</a>::<wbr><a href='index.html'>reader</a></p><script>window.sidebarCurrent = {name: 'StandardLogLineReader', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'><a href='../../index.html'>metrics_distributor</a>::<wbr><a href='../index.html'>parsers</a>::<wbr><a href='index.html'>log_line</a></p><script>window.sidebarCurrent = {name: 'HerokuLogLineReader', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
     </nav>
 
     <nav class="sub">
@@ -42,18 +42,13 @@
     </nav>
 
     <section id='main' class="content struct">
-<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>metrics_distributor</a>::<wbr><a href='index.html'>reader</a>::<wbr><a class='struct' href=''>StandardLogLineReader</a></span><span class='out-of-band'><span id='render-detail'>
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>metrics_distributor</a>::<wbr><a href='../index.html'>parsers</a>::<wbr><a href='index.html'>log_line</a>::<wbr><a class='struct' href=''>HerokuLogLineReader</a></span><span class='out-of-band'><span id='render-detail'>
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-749' class='srclink' href='../../src/metrics_distributor/reader.rs.html#15' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct StandardLogLineReader;</pre><div class='docblock'><p>Reads metrics from log lines in the standard formats:</p>
-
-<ul>
-<li>Measures: <code>measure#metric=1.2</code></li>
-<li>Counts: <code>count#metric=3</code></li>
-</ul>
-</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='../../metrics_distributor/reader/trait.LogLineReader.html' title='metrics_distributor::reader::LogLineReader'>LogLineReader</a> for <a class='struct' href='../../metrics_distributor/reader/struct.StandardLogLineReader.html' title='metrics_distributor::reader::StandardLogLineReader'>StandardLogLineReader</a></code></h3><div class='impl-items'><h4 id='method.read' class='method'><code>fn <a href='../../metrics_distributor/reader/trait.LogLineReader.html#method.read' class='fnname'>read</a>(&amp;self, line: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='enum' href='../../metrics_distributor/metrics/enum.Metric.html' title='metrics_distributor::metrics::Metric'>Metric</a>&gt;</code></h4>
+        </span><a id='src-802' class='srclink' href='../../../src/metrics_distributor/parsers/log_line.rs.html#52' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct HerokuLogLineReader;</pre><div class='docblock'><p>Reads Heroku&#39;s logging metrics.</p>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='../../../metrics_distributor/parsers/log_line/trait.LogLineReader.html' title='metrics_distributor::parsers::log_line::LogLineReader'>LogLineReader</a> for <a class='struct' href='../../../metrics_distributor/parsers/log_line/struct.HerokuLogLineReader.html' title='metrics_distributor::parsers::log_line::HerokuLogLineReader'>HerokuLogLineReader</a></code></h3><div class='impl-items'><h4 id='method.read' class='method'><code>fn <a href='../../../metrics_distributor/parsers/log_line/trait.LogLineReader.html#method.read' class='fnname'>read</a>(&amp;self, line: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='enum' href='../../../metrics_distributor/metrics/enum.Metric.html' title='metrics_distributor::metrics::Metric'>Metric</a>&gt;</code></h4>
 </div></section>
     <section id='search' class="content hidden"></section>
 
@@ -106,13 +101,13 @@
     
 
     <script>
-        window.rootPath = "../../";
+        window.rootPath = "../../../";
         window.currentCrate = "metrics_distributor";
         window.playgroundUrl = "";
     </script>
-    <script src="../../jquery.js"></script>
-    <script src="../../main.js"></script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
     
-    <script defer src="../../search-index.js"></script>
+    <script defer src="../../../search-index.js"></script>
 </body>
 </html>

@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["statsd",""]]});
+initSidebarItems({"mod":[["log_line",""],["statsd",""]]});

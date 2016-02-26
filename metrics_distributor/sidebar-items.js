@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["collectors",""],["forwarders",""],["metrics",""],["parsers",""],["reader",""],["store",""]]});
+initSidebarItems({"mod":[["collectors",""],["forwarders",""],["metrics",""],["parsers",""],["store",""]]});
