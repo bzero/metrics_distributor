@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["BaseStore","Internal storage of store data."],["SharedStore","Thread-safe interface to the store. In most cases this is what you want to use."]]});
