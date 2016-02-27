@@ -121,6 +121,8 @@
 <span id="78">78</span>
 <span id="79">79</span>
 <span id="80">80</span>
+<span id="81">81</span>
+<span id="82">82</span>
 </pre><pre class='rust '>
 <span class='doccomment'>//! Reports metrics to Datadog using their HTTPS API.</span>
 
@@ -131,7 +133,7 @@
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>collections</span>::<span class='ident'>BTreeMap</span>;
 
 <span class='kw'>use</span> <span class='ident'>super</span>::<span class='ident'>Forwarder</span>;
-<span class='kw'>use</span> <span class='ident'>super</span>::<span class='ident'>super</span>::<span class='ident'>metrics</span>::{<span class='ident'>AggregatedMetrics</span>, <span class='ident'>MetricType</span>};
+<span class='kw'>use</span> <span class='ident'>super</span>::<span class='ident'>super</span>::<span class='ident'>metrics</span>::<span class='ident'>AggregatedMetrics</span>;
 
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>DatadogForwarder</span> {
     <span class='ident'>api_key</span>: <span class='ident'>String</span>,
@@ -147,6 +149,8 @@
     }
 
     <span class='kw'>fn</span> <span class='ident'>serialize_metrics</span>(<span class='ident'>metrics</span>: <span class='ident'>AggregatedMetrics</span>) <span class='op'>-&gt;</span> <span class='ident'>Json</span> {
+        <span class='kw'>use</span> <span class='ident'>super</span>::<span class='ident'>super</span>::<span class='ident'>metrics</span>::<span class='ident'>AggregatedMetricType</span>::<span class='op'>*</span>;
+
         <span class='kw'>let</span> <span class='ident'>timestamp</span> <span class='op'>=</span> <span class='ident'>UTC</span>::<span class='ident'>now</span>().<span class='ident'>timestamp</span>();
 
         <span class='kw'>let</span> <span class='ident'>series</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>Json</span><span class='op'>&gt;</span> <span class='op'>=</span> <span class='ident'>metrics</span>
@@ -157,9 +161,9 @@
                 <span class='kw'>let</span> (<span class='kw-2'>ref</span> <span class='ident'>metric_type</span>, <span class='kw-2'>ref</span> <span class='ident'>name</span>, <span class='kw-2'>ref</span> <span class='ident'>value</span>) <span class='op'>=</span> <span class='op'>*</span><span class='ident'>metric</span>;
 
                 <span class='kw'>let</span> <span class='ident'>api_type</span> <span class='op'>=</span> <span class='kw'>match</span> <span class='op'>*</span><span class='ident'>metric_type</span> {
-                    <span class='ident'>MetricType</span>::<span class='ident'>Count</span>   <span class='op'>=&gt;</span> <span class='string'>&quot;counter&quot;</span>,
-                    <span class='ident'>MetricType</span>::<span class='ident'>Measure</span> <span class='op'>=&gt;</span> <span class='string'>&quot;gauge&quot;</span>,
-                    <span class='ident'>MetricType</span>::<span class='ident'>Sample</span>  <span class='op'>=&gt;</span> <span class='string'>&quot;gauge&quot;</span>,
+                    <span class='ident'>Count</span>   <span class='op'>=&gt;</span> <span class='string'>&quot;counter&quot;</span>,
+                    <span class='ident'>Measure</span> <span class='op'>=&gt;</span> <span class='string'>&quot;gauge&quot;</span>,
+                    <span class='ident'>Sample</span>  <span class='op'>=&gt;</span> <span class='string'>&quot;gauge&quot;</span>,
                 };
 
                 <span class='ident'>object</span>.<span class='ident'>insert</span>(<span class='string'>&quot;metric&quot;</span>.<span class='ident'>to_owned</span>(), <span class='ident'>name</span>.<span class='ident'>to_json</span>());

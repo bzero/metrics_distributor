@@ -102,14 +102,14 @@
 <span class='kw'>use</span> <span class='ident'>super</span>::<span class='ident'>super</span>::<span class='ident'>metrics</span>::<span class='ident'>Metric</span>;
 <span class='kw'>use</span> <span class='ident'>super</span>::<span class='ident'>super</span>::<span class='ident'>parsers</span>::<span class='ident'>log_line</span>::<span class='ident'>LogLineReader</span>;
 
+<span class='doccomment'>/// Accepts HTTP requests and reads lines from the body. Each line will be</span>
+<span class='doccomment'>/// passed to its set of `readers` and any metrics collected by those readers</span>
+<span class='doccomment'>/// will be recorded in the `store`.</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>LogDrainHandler</span> {
     <span class='ident'>store</span>: <span class='ident'>SharedStore</span>,
     <span class='ident'>readers</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>Box</span><span class='op'>&lt;</span><span class='ident'>LogLineReader</span><span class='op'>&gt;&gt;</span>,
 }
 
-<span class='doccomment'>/// Accepts HTTP requests and reads lines from the body. Each line will be</span>
-<span class='doccomment'>/// passed to its set of `readers` and any metrics collected by those readers</span>
-<span class='doccomment'>/// will be recorded in the `store`.</span>
 <span class='kw'>impl</span> <span class='ident'>LogDrainHandler</span> {
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span>(<span class='ident'>store</span>: <span class='ident'>SharedStore</span>, <span class='ident'>readers</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>Box</span><span class='op'>&lt;</span><span class='ident'>LogLineReader</span><span class='op'>&gt;&gt;</span>) <span class='op'>-&gt;</span> <span class='ident'>LogDrainHandler</span> {
         <span class='ident'>LogDrainHandler</span> {

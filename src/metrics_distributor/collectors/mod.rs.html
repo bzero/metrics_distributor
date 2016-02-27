@@ -45,10 +45,18 @@
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
+<span id="5">5</span>
+<span id="6">6</span>
+<span id="7">7</span>
+<span id="8">8</span>
 </pre><pre class='rust '>
+<span class='doccomment'>//! Collectors listen for metrics in various protocols. They record metrics</span>
+<span class='doccomment'>//! they receive in a `SharedStore`.</span>
+
 <span class='doccomment'>/// Tools for building collectors to be exposed through the Iron HTTP library.</span>
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>http</span>;
 
+<span class='doccomment'>/// Provides UDP and TCP StatsD servers.</span>
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>statsd</span>;
 </pre>
 </section>

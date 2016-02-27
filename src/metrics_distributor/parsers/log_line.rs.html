@@ -265,6 +265,12 @@
 <span id="222">222</span>
 <span id="223">223</span>
 <span id="224">224</span>
+<span id="225">225</span>
+<span id="226">226</span>
+<span id="227">227</span>
+<span id="228">228</span>
+<span id="229">229</span>
+<span id="230">230</span>
 </pre><pre class='rust '>
 <span class='kw'>use</span> <span class='ident'>regex</span>::{<span class='ident'>Regex</span>};
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>str</span>::{<span class='ident'>FromStr</span>};
@@ -340,7 +346,9 @@
 }
 
 <span class='kw'>impl</span> <span class='ident'>HerokuLogLineReader</span> {
-    <span class='kw'>fn</span> <span class='ident'>parse_status</span>(<span class='ident'>line</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>Metric</span><span class='op'>&gt;</span> {
+    <span class='doccomment'>/// Parses Heroku router status lines for the response service time (how</span>
+    <span class='doccomment'>/// long it took) and the HTTP response status.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>parse_status</span>(<span class='ident'>line</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>Metric</span><span class='op'>&gt;</span> {
         <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>metrics</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>Metric</span><span class='op'>&gt;</span> <span class='op'>=</span> <span class='macro'>vec</span><span class='macro'>!</span>[];
 
         <span class='kw'>let</span> <span class='ident'>status</span> <span class='op'>=</span> <span class='kw'>match</span> <span class='ident'>STATUS_REGEX</span>.<span class='ident'>captures</span>(<span class='ident'>line</span>) {
@@ -370,7 +378,11 @@
         <span class='ident'>metrics</span>
     }
 
-    <span class='kw'>fn</span> <span class='ident'>parse_heroku_codes</span>(<span class='ident'>line</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>Metric</span><span class='op'>&gt;</span> {
+    <span class='doccomment'>/// Parses Heroku warning and error codes like &quot;Hxx&quot; where &quot;xx&quot; is a pair</span>
+    <span class='doccomment'>/// of numbers. See the [Heroku][] site for more details.</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>/// [Heroku]: https://devcenter.heroku.com/articles/error-codes</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>parse_heroku_codes</span>(<span class='ident'>line</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>Metric</span><span class='op'>&gt;</span> {
         <span class='kw'>let</span> <span class='ident'>is_warning</span> <span class='op'>=</span> <span class='ident'>line</span>.<span class='ident'>contains</span>(<span class='string'>&quot;at=warning&quot;</span>);
         <span class='kw'>let</span> <span class='ident'>is_error</span>   <span class='op'>=</span> <span class='ident'>line</span>.<span class='ident'>contains</span>(<span class='string'>&quot;at=error&quot;</span>);
 
@@ -383,7 +395,7 @@
         ]
     }
 
-    <span class='kw'>fn</span> <span class='ident'>parse_loads</span>(<span class='ident'>line</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>Metric</span><span class='op'>&gt;</span> {
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>parse_loads</span>(<span class='ident'>line</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>Metric</span><span class='op'>&gt;</span> {
         <span class='kw'>let</span> <span class='ident'>load_avg_1m</span> <span class='op'>=</span> <span class='kw'>match</span> <span class='ident'>LOAD_AVG_1M_REGEX</span>.<span class='ident'>captures</span>(<span class='ident'>line</span>) {
             <span class='prelude-val'>Some</span>(<span class='ident'>captures</span>) <span class='op'>=&gt;</span> <span class='ident'>captures</span>.<span class='ident'>at</span>(<span class='number'>1</span>).<span class='ident'>and_then</span>(<span class='op'>|</span><span class='ident'>c</span><span class='op'>|</span> <span class='ident'>f64</span>::<span class='ident'>from_str</span>(<span class='ident'>c</span>).<span class='ident'>ok</span>()).<span class='ident'>unwrap</span>(),
             <span class='prelude-val'>None</span> <span class='op'>=&gt;</span> <span class='kw'>return</span> <span class='macro'>vec</span><span class='macro'>!</span>[],

@@ -179,6 +179,7 @@
 <span id="136">136</span>
 <span id="137">137</span>
 <span id="138">138</span>
+<span id="139">139</span>
 </pre><pre class='rust '>
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>io</span>::{<span class='ident'>BufRead</span>, <span class='ident'>BufReader</span>};
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>str</span>;
@@ -263,6 +264,7 @@
     } <span class='comment'>// fn handle_client</span>
 } <span class='comment'>// struct StatsdTcpListener</span>
 
+<span class='doccomment'>/// Listens for StatsD UDP datagrams.</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>StatsdUdpListener</span> {
     <span class='ident'>store</span>: <span class='ident'>SharedStore</span>,
 }

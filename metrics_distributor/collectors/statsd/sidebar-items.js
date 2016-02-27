@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["StatsdTcpListener","Listens on a TCP socket for StatsD messages."],["StatsdUdpListener",""]]});
+initSidebarItems({"struct":[["StatsdTcpListener","Listens on a TCP socket for StatsD messages."],["StatsdUdpListener","Listens for StatsD UDP datagrams."]]});

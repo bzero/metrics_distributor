@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["collectors",""],["forwarders",""],["metrics",""],["parsers",""],["store",""]]});
+initSidebarItems({"mod":[["collectors","Collectors listen for metrics in various protocols. They record metrics they receive in a `SharedStore`."],["forwarders",""],["metrics",""],["parsers",""],["store",""]]});

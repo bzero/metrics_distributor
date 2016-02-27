@@ -54,7 +54,10 @@
                         <td><a class='struct' href='struct.LogDrainHandler.html'
                                title='metrics_distributor::collectors::http::LogDrainHandler'>LogDrainHandler</a></td>
                         <td class='docblock short'>
-                             
+                             <p>Accepts HTTP requests and reads lines from the body. Each line will be
+passed to its set of <code>readers</code> and any metrics collected by those readers
+will be recorded in the <code>store</code>.</p>
+
                         </td>
                     </tr>
                 </table></section>

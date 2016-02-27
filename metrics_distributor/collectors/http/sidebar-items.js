@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["LogDrainHandler",""]]});
+initSidebarItems({"struct":[["LogDrainHandler","Accepts HTTP requests and reads lines from the body. Each line will be passed to its set of `readers` and any metrics collected by those readers will be recorded in the `store`."]]});
