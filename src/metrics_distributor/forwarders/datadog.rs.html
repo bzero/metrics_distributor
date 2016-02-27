@@ -123,8 +123,13 @@
 <span id="80">80</span>
 <span id="81">81</span>
 <span id="82">82</span>
+<span id="83">83</span>
+<span id="84">84</span>
+<span id="85">85</span>
+<span id="86">86</span>
+<span id="87">87</span>
 </pre><pre class='rust '>
-<span class='doccomment'>//! Reports metrics to Datadog using their HTTPS API.</span>
+<span class='doccomment'>//! Reports metrics to Datadog through their HTTPS API.</span>
 
 <span class='kw'>use</span> <span class='ident'>chrono</span>::<span class='ident'>UTC</span>;
 <span class='kw'>use</span> <span class='ident'>hyper</span>::<span class='ident'>client</span>::{<span class='ident'>Client</span>, <span class='ident'>RequestBuilder</span>};
@@ -135,9 +140,14 @@
 <span class='kw'>use</span> <span class='ident'>super</span>::<span class='ident'>Forwarder</span>;
 <span class='kw'>use</span> <span class='ident'>super</span>::<span class='ident'>super</span>::<span class='ident'>metrics</span>::<span class='ident'>AggregatedMetrics</span>;
 
+<span class='doccomment'>/// Forwards metrics to Datadog via its HTTPS API.</span>
+<span class='doccomment'>///</span>
+<span class='doccomment'>/// See [their documentation][] for more details.</span>
+<span class='doccomment'>///</span>
+<span class='doccomment'>/// [their documentation]: http://docs.datadoghq.com/api/</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>DatadogForwarder</span> {
-    <span class='ident'>api_key</span>: <span class='ident'>String</span>,
-    <span class='ident'>base_url</span>: <span class='ident'>String</span>,
+    <span class='kw'>pub</span> <span class='ident'>api_key</span>: <span class='ident'>String</span>,
+    <span class='kw'>pub</span> <span class='ident'>base_url</span>: <span class='ident'>String</span>,
 }
 
 <span class='kw'>impl</span> <span class='ident'>DatadogForwarder</span> {

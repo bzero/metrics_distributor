@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["DatadogForwarder",""]]});
+initSidebarItems({"struct":[["DatadogForwarder","Forwards metrics to Datadog via its HTTPS API."]]});

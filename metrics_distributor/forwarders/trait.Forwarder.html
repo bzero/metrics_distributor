@@ -46,13 +46,15 @@
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-180' class='srclink' href='../../src/metrics_distributor/forwarders/mod.rs.html#7-9' title='goto source code'>[src]</a></span></h1>
+        </span><a id='src-180' class='srclink' href='../../src/metrics_distributor/forwarders/mod.rs.html#10-13' title='goto source code'>[src]</a></span></h1>
 <pre class='rust trait'>pub trait Forwarder {
     fn <a href='#tymethod.forward_metrics' class='fnname'>forward_metrics</a>(&amp;self, <a class='struct' href='../../metrics_distributor/metrics/struct.AggregatedMetrics.html' title='metrics_distributor::metrics::AggregatedMetrics'>AggregatedMetrics</a>);
-}</pre>
+}</pre><div class='docblock'><p>Handles forwarding on a set of aggregated metrics.</p>
+</div>
             <h2 id='required-methods'>Required Methods</h2>
             <div class='methods'>
-        <h3 id='tymethod.forward_metrics' class='method stab '><code>fn <a href='#tymethod.forward_metrics' class='fnname'>forward_metrics</a>(&amp;self, <a class='struct' href='../../metrics_distributor/metrics/struct.AggregatedMetrics.html' title='metrics_distributor::metrics::AggregatedMetrics'>AggregatedMetrics</a>)</code></h3></div>
+        <h3 id='tymethod.forward_metrics' class='method stab '><code>fn <a href='#tymethod.forward_metrics' class='fnname'>forward_metrics</a>(&amp;self, <a class='struct' href='../../metrics_distributor/metrics/struct.AggregatedMetrics.html' title='metrics_distributor::metrics::AggregatedMetrics'>AggregatedMetrics</a>)</code></h3><div class='docblock'><p>Sends a vector of aggregated metrics to the forwarder&#39;s destination.</p>
+</div></div>
         <h2 id='implementors'>Implementors</h2>
         <ul class='item-list' id='implementors-list'>
     <li><code>impl <a class='trait' href='../../metrics_distributor/forwarders/trait.Forwarder.html' title='metrics_distributor::forwarders::Forwarder'>Forwarder</a> for <a class='struct' href='../../metrics_distributor/forwarders/datadog/struct.DatadogForwarder.html' title='metrics_distributor::forwarders::datadog::DatadogForwarder'>DatadogForwarder</a></code></li>

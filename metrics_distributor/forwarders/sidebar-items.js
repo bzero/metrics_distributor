@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["datadog","Reports metrics to Datadog using their HTTPS API."]],"trait":[["Forwarder",""]]});
+initSidebarItems({"mod":[["datadog","Reports metrics to Datadog through their HTTPS API."]],"trait":[["Forwarder","Handles forwarding on a set of aggregated metrics."]]});

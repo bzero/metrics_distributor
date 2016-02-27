@@ -66,6 +66,9 @@
 <span id="23">23</span>
 <span id="24">24</span>
 <span id="25">25</span>
+<span id="26">26</span>
+<span id="27">27</span>
+<span id="28">28</span>
 </pre><pre class='rust '>
 <span class='attribute'>#[<span class='ident'>macro_use</span>]</span>
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>lazy_static</span>;
@@ -80,9 +83,12 @@
 
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>collectors</span>;
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>forwarders</span>;
-<span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>store</span>;
-<span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>metrics</span>;
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>parsers</span>;
+
+<span class='doccomment'>/// Types representing collected and aggregated metrics.</span>
+<span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>metrics</span>;
+<span class='doccomment'>/// Stores actually record collected metrics.</span>
+<span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>store</span>;
 
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>store</span>::<span class='op'>*</span>;
 
