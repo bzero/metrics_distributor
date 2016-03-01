@@ -92,6 +92,8 @@
 <span id="49">49</span>
 <span id="50">50</span>
 <span id="51">51</span>
+<span id="52">52</span>
+<span id="53">53</span>
 </pre><pre class='rust '>
 <span class='kw'>use</span> <span class='ident'>iron</span>::<span class='ident'>prelude</span>::<span class='op'>*</span>;
 <span class='kw'>use</span> <span class='ident'>iron</span>::<span class='ident'>middleware</span>::<span class='ident'>Handler</span>;
@@ -111,6 +113,8 @@
 }
 
 <span class='kw'>impl</span> <span class='ident'>LogDrainHandler</span> {
+    <span class='doccomment'>/// Create a new handler with the given vector of readers. Each reader</span>
+    <span class='doccomment'>/// will be called on every line the handler receives.</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span>(<span class='ident'>store</span>: <span class='ident'>SharedStore</span>, <span class='ident'>readers</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>Box</span><span class='op'>&lt;</span><span class='ident'>LogLineReader</span><span class='op'>&gt;&gt;</span>) <span class='op'>-&gt;</span> <span class='ident'>LogDrainHandler</span> {
         <span class='ident'>LogDrainHandler</span> {
             <span class='ident'>store</span>: <span class='ident'>store</span>,

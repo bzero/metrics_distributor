@@ -46,13 +46,16 @@
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-92' class='srclink' href='../../../src/metrics_distributor/collectors/statsd.rs.html#85-87' title='goto source code'>[src]</a></span></h1>
+        </span><a id='src-92' class='srclink' href='../../../src/metrics_distributor/collectors/statsd.rs.html#91-93' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'>pub struct StatsdUdpListener {
     // some fields omitted
 }</pre><div class='docblock'><p>Listens for StatsD UDP datagrams.</p>
 </div><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../../../metrics_distributor/collectors/statsd/struct.StatsdUdpListener.html' title='metrics_distributor::collectors::statsd::StatsdUdpListener'>StatsdUdpListener</a></code></h3><div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>(store: <a class='struct' href='../../../metrics_distributor/store/struct.SharedStore.html' title='metrics_distributor::store::SharedStore'>SharedStore</a>) -&gt; <a class='struct' href='../../../metrics_distributor/collectors/statsd/struct.StatsdUdpListener.html' title='metrics_distributor::collectors::statsd::StatsdUdpListener'>StatsdUdpListener</a></code></h4>
 <h4 id='method.listen' class='method'><code>fn <a href='#method.listen' class='fnname'>listen</a>&lt;A&gt;(&amp;self, addr: A) <span class='where'>where A: <a class='trait' href='https://doc.rust-lang.org/nightly/std/net/addr/trait.ToSocketAddrs.html' title='std::net::addr::ToSocketAddrs'>ToSocketAddrs</a></span></code></h4>
-</div></section>
+<div class='docblock'><p>Spawns a separate thread that listens for StatsD UDP datagrams,
+received datagrams are sent back to the calling thread (this will
+block) and the parsed metrics are recorded in the store.</p>
+</div></div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>

@@ -52,7 +52,13 @@
 }</pre><div class='docblock'><p>Listens on a TCP socket for StatsD messages.</p>
 </div><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../../../metrics_distributor/collectors/statsd/struct.StatsdTcpListener.html' title='metrics_distributor::collectors::statsd::StatsdTcpListener'>StatsdTcpListener</a></code></h3><div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>(store: <a class='struct' href='../../../metrics_distributor/store/struct.SharedStore.html' title='metrics_distributor::store::SharedStore'>SharedStore</a>) -&gt; <a class='struct' href='../../../metrics_distributor/collectors/statsd/struct.StatsdTcpListener.html' title='metrics_distributor::collectors::statsd::StatsdTcpListener'>StatsdTcpListener</a></code></h4>
 <h4 id='method.listen' class='method'><code>fn <a href='#method.listen' class='fnname'>listen</a>&lt;A&gt;(&amp;self, addr: A) <span class='where'>where A: <a class='trait' href='https://doc.rust-lang.org/nightly/std/net/addr/trait.ToSocketAddrs.html' title='std::net::addr::ToSocketAddrs'>ToSocketAddrs</a></span></code></h4>
-</div></section>
+<div class='docblock'><p>Spawns a separate thread to listen for TCP connections; connections
+opened then spawn another thread that reads StatsD messages from the
+client and sends those messages back to the calling thread.</p>
+
+<p>The calling thread blocks waiting for messages. When it receives a
+message it parses its metrics and records those metrics in the store.</p>
+</div></div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
