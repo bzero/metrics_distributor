@@ -122,6 +122,12 @@
 <span id="79">79</span>
 <span id="80">80</span>
 <span id="81">81</span>
+<span id="82">82</span>
+<span id="83">83</span>
+<span id="84">84</span>
+<span id="85">85</span>
+<span id="86">86</span>
+<span id="87">87</span>
 </pre><pre class='rust '>
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>collections</span>::<span class='ident'>hash_map</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>slice</span>::<span class='ident'>Iter</span>;
@@ -158,6 +164,12 @@
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span>() <span class='op'>-&gt;</span> <span class='ident'>AggregatedMetrics</span> {
         <span class='ident'>AggregatedMetrics</span> {
             <span class='ident'>metrics</span>: <span class='macro'>vec</span><span class='macro'>!</span>[],
+        }
+    }
+
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>with_metrics</span>(<span class='ident'>metrics</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>AggregatedMetric</span><span class='op'>&gt;</span>) <span class='op'>-&gt;</span> <span class='ident'>AggregatedMetrics</span> {
+        <span class='ident'>AggregatedMetrics</span> {
+            <span class='ident'>metrics</span>: <span class='ident'>metrics</span>,
         }
     }
 
